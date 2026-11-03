@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c5e4c711-a38e-4172-bc76-edec8a3ba90f</UserSecretsId>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\GymManagement.BLL\GymManagement.BLL.csproj" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="MembersPhotos\" />
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
+</Project>

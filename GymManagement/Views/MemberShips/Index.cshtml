@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GymManagement.BLL.ViewModels.MemberShipViewModels.MemberShipViewModel>
+
+@{
+    ViewData["Title"] = "Memberships";
+}
+
+<h1>Memberships</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Create New Membership
+    </a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Member</th>
+            <th>Plan</th>
+            <th>Price</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model == null || !Model.Any())
+        {
+            <tr>
+                <td colspan="7" class="text-center">
+                    No Memberships Found
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MemberName</td>
+                    <td>@item.PlanName</td>
+                    <td>@item.PlanPrice</td>
+                    <td>@item.StartDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.EndDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+```

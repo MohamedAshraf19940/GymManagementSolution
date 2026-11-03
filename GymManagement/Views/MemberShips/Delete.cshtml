@@ -1,0 +1,55 @@
+﻿@model GymManagement.BLL.ViewModels.MemberShipViewModels.MemberShipViewModel
+
+@{
+    ViewData["Title"] = "Delete Membership";
+}
+
+<h1>Delete Membership</h1>
+
+<h4 class="text-danger">
+    Are you sure you want to delete this membership?
+</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="row">
+
+            <dt class="col-sm-4">Member Name</dt>
+            <dd class="col-sm-8">@Model.MemberName</dd>
+
+            <dt class="col-sm-4">Plan Name</dt>
+            <dd class="col-sm-8">@Model.PlanName</dd>
+
+            <dt class="col-sm-4">Plan Price</dt>
+            <dd class="col-sm-8">@Model.PlanPrice</dd>
+
+            <dt class="col-sm-4">Start Date</dt>
+            <dd class="col-sm-8">@Model.StartDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-4">End Date</dt>
+            <dd class="col-sm-8">@Model.EndDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-4">Status</dt>
+            <dd class="col-sm-8">@Model.Status</dd>
+
+        </dl>
+
+        <form asp-action="Delete" method="post">
+
+            <input type="hidden" asp-for="Id" />
+
+            <button type="submit" class="btn btn-danger">
+                Confirm Delete
+            </button>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+</div>
